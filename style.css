@@ -1,0 +1,208 @@
+/* গ্লোবাল রিসেট এবং ফন্ট */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    background-color: #f4f7f6;
+    /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* প্রধান কন্টেইনার */
+.product-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* ফ্ল্যাক্সবক্স ব্যবহার করে লেআউট */
+    flex-wrap: wrap;
+    /* ছোট স্ক্রিনের জন্য র্যাপ করা */
+    overflow: hidden;
+}
+
+/* পণ্যের চিত্র বিভাগ */
+.product-image {
+    flex: 1 1 500px;
+    /* ফ্লেক্স আইটেম সাইজ */
+    padding: 20px;
+    background-color: #ffffff;
+    /* হালকা নীল ব্যাকগ্রাউন্ড */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+    /* হোভারে হালকা জুম */
+}
+
+/* পণ্যের বিবরণ বিভাগ */
+.product-details {
+    flex: 1 1 500px;
+    padding: 40px;
+}
+
+.product-title {
+    font-size: 2.2em;
+    color: #007bff;
+    /* উজ্জ্বল নীল শিরোনাম */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.product-price {
+    font-size: 1.8em;
+    color: #dc3545;
+    /* লাল রং দিয়ে দাম হাইলাইট */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.old-price {
+    font-size: 0.6em;
+    color: #999;
+    text-decoration: line-through;
+    /* পুরনো দাম কেটে দেওয়া */
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.product-rating {
+    margin-bottom: 20px;
+    color: #ffc107;
+    /* তারা চিহ্নের রং হলুদ */
+    font-size: 1.1em;
+}
+
+.reviews-count {
+    color: #6c757d;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.product-short-description {
+    margin-bottom: 25px;
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    font-style: italic;
+    color: #000000;
+}
+
+.section-heading {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.features-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.features-list li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+/* অ্যাকশন বাটন */
+.action-buttons button {
+    padding: 11px 25px 15px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-right: 15px;
+}
+
+.buy-button {
+    background-color: #28a745;
+    cursor: pointer;
+    transition: background-color 0.30s, color 0.30s, box-shadow 0.3s, transform 0.3s ease-in-out;
+    /* সবুজ বাটন */
+    color: white;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+    /* transform: translateY(-2px); */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.30);
+    transform: scale(1.02);
+}
+
+.buy-button:active {
+    opacity: 0.70;
+}
+
+.add-to-cart-button {
+    background-color: #ffc107;
+    cursor: pointer;
+    transition: background-color 0.30s, color 0.30s, box-shadow 0.3s, transform 0.3s ease-in-out;
+    /* হলুদ বাটন */
+    color: #333;
+}
+
+.add-to-cart-button:hover {
+    background-color: #e0a800;
+    /* transform: translateY(-2px); */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.30);
+    transform: scale(1.02);
+}
+
+.add-to-cart-button:active {
+    opacity: 0.70;
+}
+
+.product-long-description {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+/* রেসপনসিভ ডিজাইন */
+@media (max-width: 900px) {
+    .product-container {
+        flex-direction: column;
+
+        /* ছোট স্ক্রিনে কলাম লেআউট */
+        margin: 20px auto;
+    }
+    .add-to-cart-button {
+        margin-top: 10px;
+    }
+
+    .product-image,
+    .product-details {
+        flex-basis: 100%;
+        padding: 20px;
+    }
+
+    .product-title {
+        font-size: 1.8em;
+    }
+
+    .product-price {
+        font-size: 1.5em;
+    }
+
+}
